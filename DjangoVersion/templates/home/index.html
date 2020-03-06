@@ -1,0 +1,250 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href='{% static "/style.css" %}'/>
+    <!-- <link rel="stylesheet" href="bootstrap.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <title>Onkar Dherange</title>
+  </head>
+
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+    <strong> </strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+
+
+  <body>
+    <header>
+      <div class="menu-toggler">
+        <div class="bar half start"></div>
+        <div class="bar"></div>
+        <div class="bar half end"></div>
+      </div>
+
+      <nav class="top-nav">
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li>
+            <a href="#services" class="nav-link">Skills</a>
+          </li>
+          <li>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="landing-text">
+        <h1>Onkar Dherange</h1>
+        <h6>Web Developer and Coding Enthusiast</h6>
+      </div>
+    </header>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="profile-img" data-aos="fade-right" data-aos-delay=300>
+          <img src='{%static "images/mypic.jpg"%}' alt="" />
+        </div>
+        <div class="about-detail"  data-aos="fade-left" data-aos-delay=600>
+          <div class="about-heading">
+            <h1>About</h1>
+            <h6>Myself</h6>
+          </div>
+          <p>
+            
+            Onkar is a web developer,coding enthusiast from Pune,India and he loves programming. 
+            He type Code , design and develop some websites and play table-tennis as hobbie.
+            He avoids speaking about himself as a third person.
+            As of now he's doing BE Computer in D.Y.Patil COllege Of Engineering,Pune.
+            Problem solving is his favourite thing to pass some extra time.
+            Trying to learn new technologies and doing work in Full Stack way is what 
+            he's focused on.
+            Lets declare Variables and Not War.
+          </p>
+          <div class="social-media">
+            <ul class="nav-list">
+              <li>
+                <a href="https://www.linkedin.com/in/onkar-dherange-64923a14a" class="icon-link">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li>
+                <a href="http://twitter.com/AngryOnkar?s=09" class="icon-link">
+                  <i class="fab fa-twitter-square"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/OnkarSD?tab=repositories" class="icon-link">
+                  <i class="fab fa-github-square"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h1>Services</h1>
+          <h6>What i can do</h6>
+        </div>
+        <div class="my-skills">
+          {% for skill in skills %}
+          <div class="skill"   data-aos="fade-left" data-aos-delay={{skill.delay}}>
+            <div class="icon-container">
+              <i class="fas fa-{{skill.tag}}"></i>
+            </div>
+            <h1>{{skill.title}}</h1>
+            <p>
+              {{skill.desc}}   
+            </p>
+          </div>
+          {% endfor %}
+        </div>
+          
+
+        </div>
+        
+          </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <h1>portfolio</h1>
+          <h6>My Project Work</h6>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-img has-margin-right"  data-aos="fade-right" data-aos-delay=300>
+            <img src='{%static "images/webdev.jpg" %}' alt="portfoliopicture" />
+          </div>
+          <div class="portfolio-description"  data-aos="fade-left" data-aos-delay=300>
+            <h6>Web Development</h6>
+            <h1>Portfolio Website</h1>
+            <p>
+              This project is a simple website about me and lists my skills and projects that i've done.
+            </p>
+            <p>
+              Technologies Used : HTML5,CSS3,Jquery
+            </p>
+            <a href="https://github.com/OnkarSD/portfolio/tree/master/portfolio" class="cta">View On Github</a>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-description has-margin-right"  data-aos="fade-right" data-aos-delay=300>
+            <h6>SOme JavaScript</h6>
+            <h1>Word Counting Website</h1>
+            <p>
+             beginners project in java script to learn and improve my knowledge about JavaScript.
+            </p>
+            <a href="https://github.com/OnkarSD/JavascriptMini" class="cta">View On GIthub</a>
+          </div>
+          <div class="portfolio-img"  data-aos="fade-left" data-aos-delay=300>
+            <img src='{%static "images/javascript.jpg"%}' alt="portfoliopicture" />
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <div class="portfolio-img has-margin-right">
+            <img src='{%static "images/django.jpg"%}' alt="portfoliopicture"  data-aos="fade-right" data-aos-delay=300>
+          </div>
+          <div class="portfolio-description"  data-aos="fade-left" data-aos-delay=300>
+            <h6>Django Work</h6>
+            <h1>Ecommerce Website</h1>
+            <p>
+              A Fully working website Django based website for ecommerce work.
+            </p>
+            <a href="#" class="cta">View on github</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h1>contact</h1>
+          <h6>Lets Work Together</h6>
+        </div>
+        <form method="post" action="/"  data-aos="fade-up" data-aos-delay=300>{% csrf_token %}
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter Your Name"
+            required
+          />
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Your Mail"
+            required
+          />
+          <label for="services">Services:</label>
+          <select name="services" id="service">
+            <option value="Web Development">Web Development</option>
+            <option value="Django">Django BackEnd</option>
+            <option value="Problem Solving">Fun Problem Solving</option>
+          </select>
+          <label for="subject">Subject:</label>
+          <textarea name="subject" id="subject" cols="10" rows="10"></textarea>
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+    </section>
+
+    <footer class="copyright">
+      <div class="up" id="up">
+        <i class="fas fa-arrow-up"></i>
+      </div>
+      <p>&copy; 2020 Onkar Dherange</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src='{%static "script.js"%}'></script>
+    <script>
+    {% if thank %}
+      alert('Submitted Successfully');
+      document.location = "/";
+    {% endif %}
+    {% if nthank %}
+      alert('Please Enter Valid Information');
+      document.location = "/";
+    {% endif %}
+      </script>
+  </body>
+
+</html>
+
